@@ -1,25 +1,9 @@
 %h1 Listing players
-
-%table
-  %thead
-    %tr
-      %th Firstname
-      %th Lastname
-      %th Picture
-      %th
-      %th
-      %th
-
-  %tbody
-    - @players.each do |player|
-      %tr
-        %td= player.firstname
-        %td= player.lastname
-        %td= player.picture
-        %td= link_to 'Show', player
-        %td= link_to 'Edit', edit_player_path(player)
-        %td= link_to 'Destroy', player, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Player', new_player_path
+= @players.in_groups_of(3) do |group|
+		.row
+		= group.compact.each do |player|
+				.col-md-4
+				- if player.picture.present?
+						= image_tag player.picture_url
+				%h4
+				= link_to player.lastname, player

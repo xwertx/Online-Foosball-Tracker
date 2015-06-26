@@ -1,15 +1,17 @@
-%p#notice= notice
+#notice
+	%p
+		= notice
 
-%p
-  %b Firstname:
-  = @player.firstname
-%p
-  %b Lastname:
-  = @player.lastname
-%p
-  %b Picture:
-  - if @player.picture.present?
-  	= image_tag player.picture_url 
-= link_to 'Edit', edit_player_path(@player)
-\|
-= link_to 'Back', players_path
+.row
+	.col-md-9
+		- if @player.picture.present?
+			= image_tag @player.picture_tag
+	.col-md-3
+		%p
+			%b Name:
+				= @player.firstname
+				= @player.lastname
+		%p
+			= link_to 'Edit', edit_player_path(@player)
+			= link_to 'Destroy', @player, data: { confirm: 'Are you sure?' }, method: :delete
+			= link_to 'Back', players_path

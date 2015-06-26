@@ -19,6 +19,6 @@
         .collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li.active
-              %a{:href => "/players"}
+              = link_to 'New Player', new_player_path
     .container
       = yield  				

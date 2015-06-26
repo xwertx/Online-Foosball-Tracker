@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title OnlineFoosbalTracker
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %nav.navbar.navbar-default
+      .container
+        .navbar-header
+          %button{:class => 'navbar-toggle', "data-toggle" => 'collapse', "data-target" => ".navbar-collaps"}
+            %span{:class => 'sr-only'} Toggle navigation
+            %span{:class => 'icon-bar'}
+            %span{:class => 'icon-bar'}
+            %span{:class => 'icon-bar'}
+          %a{:class => "navbar-brand", :href => "/"} Online Foosball Tracker
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{:href => "/players"}
+    .container
+      = yield  				

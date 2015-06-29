@@ -8,6 +8,9 @@ gem 'sqlite3'
 gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'carrierwave'
+gem 'mini_magick'
+gem 'cocoon'
+gem 'responders'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

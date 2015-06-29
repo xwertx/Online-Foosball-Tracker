@@ -1,9 +1,7 @@
 %h1 Listing players
-= @players.in_groups_of(3) do |group|
-		.row
-		= group.compact.each do |player|
-				.col-md-4
-				- if player.picture.present?
-						= image_tag player.picture_url
-				%h4
-				= link_to player.lastname, player
+- @players.in_groups_of(3) do |group|
+  .row
+    - group.compact.each do |player|
+      .col-md-2
+        = image_tag player.picture_url(:thumb) if player.picture.present?
+        %h4= link_to player.lastname, player

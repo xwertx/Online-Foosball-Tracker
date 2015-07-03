@@ -1,0 +1,6 @@
+.match
+  %dl
+    %dt Date
+    %dd= match.match_date
+    %dt Players
+    %dd= match.players.map(&:lastname).join(', ')

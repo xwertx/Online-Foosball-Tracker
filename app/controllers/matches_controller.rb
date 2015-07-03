@@ -9,7 +9,7 @@ class MatchesController < ApplicationController
   private
 
   def match
-    @match ||= Match.new
+    @match = Match.new
   end
   helper_method :match
 
@@ -18,12 +18,12 @@ class MatchesController < ApplicationController
   end
 
   def matches
-    @matches ||= Match.all
+    @matches = Match.all
   end
   helper_method :matches
 
   def players
-    @players ||= Player.all
+    @players = Player.all
   end
   helper_method :players
 

@@ -1,0 +1,9 @@
+%h1 New Match
+= javascript_tag 'player'
+= form_for match do |f|
+  %fieldset
+    = f.label :match_date
+    = f.date_select :match_date, :order => [:day, :month, :year] , :class => "col-md-1"
+    = f.label :player_ids, 'Select players'
+    = f.collection_select :player_ids, players, :id, :lastname, { :class => "col-md-1"}, { multiple: true }
+    = f.submit

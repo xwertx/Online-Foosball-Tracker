@@ -1,0 +1,11 @@
+#notice
+	%p
+		= notice
+
+.row
+	.col-md-3
+		%p
+			%b Date:
+			= @match.match_date
+		%p
+			= link_to 'Back', players_path

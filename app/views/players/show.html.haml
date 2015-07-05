@@ -10,9 +10,16 @@
 		%p
 			%b Firstname:
 			= @player.firstname
+			%br
 			%b Lastname:				
 			= @player.lastname
 		%p
 			= link_to 'Edit', edit_player_path(@player)
 			= link_to 'Destroy', @player, data: { confirm: 'Are you sure?' }, method: :delete
 			= link_to 'Back', players_path
+	.col-md-3
+		%p
+			%b Match History
+			%br
+			- @matches.each do |match|
+				= link_to match.match_date, match_path

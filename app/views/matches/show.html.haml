@@ -7,5 +7,12 @@
 		%p
 			%b Date:
 			= @match.match_date
+			%br
+			%b Players
+			= @match.players.map(&:lastname).join(' vs ')
+			%br
+			%b Result
+			- @results.each do |result|
+				= result.result
 		%p
 			= link_to 'Back', players_path

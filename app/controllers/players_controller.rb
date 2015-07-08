@@ -11,6 +11,7 @@ class PlayersController < ApplicationController
   # GET /players/1.json
   def show
     @matches = @player.matches
+    @results = @player.match_edits
   end
 
   # GET /players/new

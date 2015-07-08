@@ -9,8 +9,8 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'cocoon'
 gem 'responders'
+gem 'cocoon'
 gem "select2-rails"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

@@ -13,6 +13,12 @@
 			%br
 			%b Lastname:				
 			= @player.lastname
+			%br
+			%b Average result:
+			= @player.average_result
+			%br
+			%b Number of wins:
+			= @player.count_wins
 		%p
 			= link_to 'Edit', edit_player_path(@player)
 			= link_to 'Destroy', @player, data: { confirm: 'Are you sure?' }, method: :delete

@@ -33,7 +33,7 @@ class MatchesController < ApplicationController
   private
 
   def match_params
-    params[:match].permit :match_date, player_ids: [], results: [], :match_edits_attributes => [:id, :result]
+    params[:match].permit :match_date, :match_edits_attributes => [:id, :result, :player_id]
   end
 
 end

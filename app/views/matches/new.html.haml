@@ -1,11 +1,11 @@
 = form_for(@match) do |f|
   = f.label :match_date
   = f.date_select :match_date, :order => [:day, :month, :year]
-  = f.label :player_ids, 'Select players'
-  = f.collection_select :player_ids, @players, :id, :lastname, {}, { multiple: true }
 
   = f.fields_for :match_edits do |ff|
+    = ff.label :player_id, 'Select player'
+    = ff.collection_select :player_id, @players, :id, :lastname, {}, { multiple: false }
     = ff.label :result
     = ff.number_field :result, in: 0..10
   %div
-    = f.button :submit
+    = f.button :submit, id: 'test'
